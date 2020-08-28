@@ -24,10 +24,11 @@ Our tested environment is Ubuntu 16.04 64-bit.
 ~~~bash
 # Install Ocaml and prerequisite packages for BINSEC via OPAM
 sudo apt update
-sudo apt install ocaml ocaml-native-compilers camlp4-extra opam
-opam init
+sudo apt install build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev libboost-all-dev autoconf libtool libssl-dev libpixman-1-dev libpython-dev python-pip python-capstone virtualenv protobuf-compiler
+sudo apt install ocaml ocaml-native-compilers camlp4-extra opam emacs-nox libgmp-dev libzmq3-dev llvm-6.0-dev libprotobuf-dev
+HTTPS_PROXY="http://xxx:80" opam init
 opam switch 4.05.0
-opam install merlin ocp-indent caml-mode tuareg menhir ocamlgraph ocamlfind piqi zmq.5.0.0 zarith llvm.6.0.0
+HTTPS_PROXY="http://xxx:80" opam install merlin ocp-indent caml-mode tuareg menhir ocamlgraph ocamlfind piqi zmq.5.0.0 zarith llvm.6.0.0
 
 # Install Python's packages
 sudo pip install networkx pydot
